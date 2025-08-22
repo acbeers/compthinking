@@ -163,7 +163,7 @@ def bear_change_follow_emptybowl():
 
 ### more set up
 def image(image_filename):
-    return f"/workspaces/Computational-Thinking-8/Images/{image_filename}.gif"
+    return f"Images/{image_filename}.gif"
 
 
 def start_timer():
