@@ -66,12 +66,52 @@ def move_new(dir):
 # }
 #
 # You can use this dictionary to look up the heading for a given direction.
-# Each value (e.g. 90) is associated with a key (e.g. "up") that you can use
+# Each "value" (e.g. 90) is associated with a "key" (e.g. "up") that you can use
 # to look it up, using square brackets.
 #
 # heading = heading_dictionary[dir]
-# 
-# Seeing that, we can refactor the code to use the dictionary.
+
+# First, some examples of working with dictionaries!
+
+def working_with_dictionaries():
+    # An empty dictionary!
+    empty_dict = {}
+    # A dictionary
+    my_dict = {"apple": 1, "banana": 2, "cherry": 3}
+    # Accessing a value (these are the same)
+    print(my_dict["apple"])
+    print(my_dict.get("apple"))
+    # Adding a new key and value
+    my_dict["date"] = 4
+    # Changing a value
+    my_dict["apple"] = 100
+    # Removing a value
+    del my_dict["banana"]
+
+    # Getting all keys
+    print(my_dict.keys())
+    # Getting all values
+    print(my_dict.values())
+
+    # Checking if a key is in the dictionary
+    print("apple" in my_dict)
+    print("banana" in my_dict)
+
+    # Getting all items
+    print(my_dict.items())
+
+    # Iterating over a dictionary
+    for key, value in my_dict.items():
+        # This code is called for each key/value pair in the dictionary
+        print(key, value)
+
+    # Getting the length (i.e. number of key/value pairs in a dictionary
+    print(len(my_dict))
+
+    # Clearing a dictionary
+    my_dict.clear()
+
+# Seeing all of this, we can refactor the code to use the dictionary.
 
 heading_dictionary = {
     "up": 90,
@@ -142,6 +182,8 @@ def closest2(a,b,c,d,e,x):
     # Now, which of these is smallest?
     smallest = distances[0]
     smallest_index = 0
+
+    # Iterate over the indexes of the distances list (i.e. 0, 1, 2, 3, 4)
     for i in range(len(distances)):
         if distances[i] < smallest:
             smallest = distances[i]
